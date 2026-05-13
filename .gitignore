@@ -3,9 +3,7 @@ node_modules/
 client/node_modules/
 server/node_modules/
 
-# Database (contains personal data — never commit)
-server/library.db
-server/*.db
+
 
 # Logs
 server/server.log
