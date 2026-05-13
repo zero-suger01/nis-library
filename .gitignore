@@ -1,0 +1,27 @@
+# Dependencies
+node_modules/
+client/node_modules/
+server/node_modules/
+
+# Database (contains personal data — never commit)
+server/library.db
+server/*.db
+
+# Logs
+server/server.log
+client/client.log
+*.log
+
+# Build output
+client/dist/
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Environment
+.env
+.env.local
+
+# Claude
+.claude/
