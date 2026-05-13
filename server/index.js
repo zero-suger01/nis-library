@@ -1,5 +1,6 @@
 const express = require('express');
-const http = require('http');
+const http    = require('http');
+const path    = require('path');
 const { Server } = require('socket.io');
 const cors = require('cors');
 
@@ -21,6 +22,11 @@ app.use((req, _res, next) => { req.io = io; next(); });
 app.use('/api/books',        booksRouter);
 app.use('/api/transactions', transactionsRouter);
 app.use('/api/contributors', contributorsRouter);
+
+// Serve built React app in production
+const clientDist = path.join(__dirname, '../client/dist');
+app.use(express.static(clientDist));
+app.get('*', (_req, res) => res.sendFile(path.join(clientDist, 'index.html')));
 
 io.on('connection', socket => {
   console.log(`[socket] connected:    ${socket.id}`);

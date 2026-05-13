@@ -1,0 +1,14 @@
+services:
+  nis-library:
+    build: .
+    ports:
+      - "3001:3001"
+    volumes:
+      - db_data:/data
+    environment:
+      - DB_PATH=/data/library.db
+      - PORT=3001
+    restart: unless-stopped
+
+volumes:
+  db_data:

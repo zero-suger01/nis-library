@@ -1,0 +1,11 @@
+node_modules
+client/node_modules
+server/node_modules
+client/dist
+server/library.db
+server/*.log
+client/*.log
+.git
+.claude
+.DS_Store
+*.log

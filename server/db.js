@@ -1,7 +1,7 @@
 const { DatabaseSync } = require('node:sqlite');
 const path = require('path');
 
-const db = new DatabaseSync(path.join(__dirname, 'library.db'));
+const db = new DatabaseSync(process.env.DB_PATH || path.join(__dirname, 'library.db'));
 
 db.exec(`
   CREATE TABLE IF NOT EXISTS contributors (
